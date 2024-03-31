@@ -4,7 +4,7 @@ import AboutPage from './pages/Aboutpage.js';
 import DetailPage from './pages/DetailPage.js';
 
 export default function App() {
-  //return (<MainPage/>);
+  return (<MainPage/>);
   //return (<AboutPage/>);
-  return (<DetailPage/>);
+  //return (<DetailPage/>);
 }
