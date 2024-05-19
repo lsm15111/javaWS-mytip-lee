@@ -1,10 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View, Image,TouchableOpacity, Alert} from 'react-native';
 
 const main = 'https://storage.googleapis.com/sparta-image.appspot.com/lecture/about.png'
-import MainPage from './Mainpage.js';
 
-export default function Mainpage() {
+export default function AboutPage({navigation}) {
+
+    const popup = () => {
+        Alert.alert("공유!")
+
+    }
+
 
     return (
         <View style={styles.all}>
@@ -14,7 +19,7 @@ export default function Mainpage() {
                     <Text style={styles.mtext}>많은 이야기를 담아내려 노력했습니다!</Text>
                     <Text style={styles.stext}>이 곳에서 꼭 여러분의 이야기를 만들어가시길 바랍니다</Text>
                     <TouchableOpacity style={styles.btn}>
-                        <Text style={styles.btntext}>인스타공유</Text>
+                        <Text style={styles.btntext} onPress={popup}>인스타공유</Text>
                     </TouchableOpacity>
                 </View>
             
