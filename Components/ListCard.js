@@ -40,10 +40,12 @@ const styles = StyleSheet.create({
     },
     cardTitle: {
       fontSize:20,
-      fontWeight:"700"
+      fontWeight:"700",
+      color:"white",
     },
     cardDesc: {
-      fontSize:15
+      fontSize:15,
+      color:"white",
     },
     cardDate: {
       fontSize:10,

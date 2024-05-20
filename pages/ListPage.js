@@ -1,5 +1,6 @@
 import React,{useEffect,useState} from "react";
 import { StyleSheet , Text, View, Image, ScrollView,TouchableOpacity, Share, Alert} from "react-native";
+import ListCard from '../components/ListCard';
 
 export default function ListPage({navigation}){
 
@@ -46,14 +47,15 @@ return (
     // 화면에 넣은 컨텐츠를 모두 보여주려 스크롤 기능이 존재하기 때문입니다. 
     // 여기선 내부의 컨텐츠들 영역을 결정짓기 위해서 height 값과 margin,padding 값을 적절히 잘 이용해야 합니다. 
     <ScrollView style={styles.container}>
-        <Image style={styles.image} source={{uri:tip.image}}/>
-        <View style={styles.textContainer}>
-            <Text style={styles.title}>{tip.title}</Text>
-            <Text style={styles.desc}>{tip.desc}</Text>
-            <View style={styles.buttonGroup}>
-            </View>
-            
-        </View>
+        <View style={styles.cardContainer}>
+         {/* 하나의 카드 영역을 나타내는 View */}
+         {
+          tip.map((content,i)=>{
+            return (<ListCard content={content} key={i} navigation={navigation}/>)
+          })
+        }
+        
+      </View>
         
     </ScrollView>
 
@@ -100,5 +102,9 @@ button:{
 buttonText:{
     color:'#fff',
     textAlign:'center'
-}
+},
+cardContainer: {
+    marginTop:10,
+    marginLeft:10
+  },
 })
