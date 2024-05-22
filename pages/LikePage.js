@@ -1,8 +1,8 @@
 import React,{useEffect,useState} from "react";
 import { StyleSheet , Text, View, Image, ScrollView,TouchableOpacity, Share, Alert} from "react-native";
-import ListCard from '../components/ListCard';
+import LikeCard from '../components/LikeCard';
 
-export default function ListPage({navigation}){
+export default function LikePage({navigation}){
 
     const [tip, setTip] = useState([{
         "idx":3,
@@ -51,7 +51,7 @@ return (
          {/* 하나의 카드 영역을 나타내는 View */}
          {
           tip.map((content,i)=>{
-            return (<ListCard content={content} key={i} navigation={navigation}/>)
+            return (<LikeCard content={content} key={i} navigation={navigation}/>)
           })
         }
         

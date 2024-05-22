@@ -1,9 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { StyleSheet, Text, View, Image,TouchableOpacity, Alert} from 'react-native';
 
 const main = 'https://storage.googleapis.com/sparta-image.appspot.com/lecture/about.png'
 
 export default function AboutPage({navigation}) {
+
+    useEffect(() => {
+        navigation.setOptions({
+            title:'소개 페이지'
+        })
+        
+    })
 
     const popup = () => {
         Alert.alert("공유!")
